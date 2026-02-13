@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramasubramaniyan N | Software Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: #334155;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+
+        /* Header Section */
+        header { text-align: center; margin-bottom: 60px; }
+        .profile-img {
+            width: 120px; height: 120px; border-radius: 50%;
+            border: 3px solid var(--accent); padding: 5px; margin-bottom: 20px;
+        }
+        h1 { font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 10px; }
+        .location { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; }
+        
+        .contact-bar {
+            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        .contact-item { text-decoration: none; color: var(--text-secondary); font-size: 0.9rem; transition: 0.3s; }
+        .contact-item:hover { color: var(--accent); }
+
+        /* Sections */
+        section { margin-bottom: 50px; }
+        h2 { 
+            font-size: 1.5rem; margin-bottom: 25px; display: flex; align-items: center; 
+            gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 10px;
+        }
+        h2 i { color: var(--accent); font-size: 1.2rem; }
+
+        /* Experience & Projects */
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border);
+            padding: 25px; border-radius: 16px; margin-bottom: 20px; transition: 0.3s;
+        }
+        .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .card-header { display: flex; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; }
+        .card-title { font-weight: 700; color: var(--accent); }
+        .card-date { font-size: 0.85rem; color: var(--text-secondary); }
+        ul { list-style: none; }
+        li { position: relative; padding-left: 20px; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.95rem; }
+        li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+
+        /* Skills Grid */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .skill-tag { 
+            background: rgba(56, 189, 248, 0.1); color: var(--accent); 
+            padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Education & Certs */
+        .edu-flex { display: flex; justify-content: space-between; align-items: center; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .card-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <img src="https://avatars.githubusercontent.com/u/113416742?s=400&u=ee4c0f254ee957c1ee3183c64b11e543d3695bbd&v=4" alt="Ramasubramaniyan N" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Ramasubramaniyan+N&background=0ea5e9&color=fff'">
+        <h1>RAMASUBRAMANIYAN N</h1>
+        <p class="location"><i class="fa-solid fa-location-dot"></i> Alwarkurichi, Tenkasi, Tamil Nadu</p>
+        
+        <div class="contact-bar">
+            <a href="tel:+918870977232" class="contact-item"><i class="fa-solid fa-phone"></i> +91 8870977232</a>
+            <a href="mailto:ramasubramaniyan6n@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> Email</a>
+            <a href="https://www.linkedin.com/in/ramasubramaniyan-n-8652581a9" class="contact-item" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/Ramasubramaniyan12" class="contact-item" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+
+        <p class="tagline" style="max-width: 700px; margin: 0 auto; color: var(--text-secondary);">
+            Software Engineer with 1.8+ years of experience at <b>TCS</b> specializing in backend development. 
+            Expert in Java, Spring Boot, and SQL optimization.
+        </p>
+    </header>
+
+    <section id="skills">
+        <h2><i class="fa-solid fa-gears"></i> Technical Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Java (Advanced)</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Hibernate/JPA</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Angular</span>
+            <span class="skill-tag">SQL (MySQL/PostgreSQL)</span>
+            <span class="skill-tag">AWS (EC2/S3)</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Jenkins</span>
+            <span class="skill-tag">Agile</span>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
+        <div class="card">
+            <div class="card-header">
+                <span class="card-title">Tata Consultancy Services (TCS) — Software Engineer</span>
+                <span class="card-date">June 2024 – Present</span>
+            </div>
+            <ul>
+                <li>Engineered backend services using Java and Spring Boot, reducing maintenance effort by 15%.</li>
+                <li>Optimized complex SQL queries, improving database processing speed by 20%.</li>
+                <li>Implemented tokenization protocols to secure sensitive PII data.</li>
+                <li>Supported CI/CD pipelines using Jenkins and UDeploy, reducing manual effort by 30%.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2><i class="fa-solid fa-code"></i> Key Projects</h2>
+        <div class="card">
+            <div class="card-header"><span class="card-title">Secure Data Processing (RDN)</span></div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 10px;">Java, Spring Boot, Hibernate</p>
+            <ul>
+                <li>Developed secure modules for sensitive customer data and performed API testing via Postman.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="card-header"><span class="card-title">Restaurant Ordering System</span></div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 10px;">Full Stack: Angular & Spring Boot</p>
+            <ul>
+                <li>Built a menu and order management system with integrated REST APIs.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+        <div class="card edu-flex">
+            <div>
+                <p><b>B.E. in Computer Science</b></p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">SNS College of Engineering</p>
+            </div>
+            <div class="card-title">CGPA: 9.05</div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
