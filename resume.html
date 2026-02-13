@@ -3,168 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramasubramaniyan N | Software Engineer</title>
+    <title>Ramasubramaniyan N | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
     <style>
         :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
+            --bg: #0b1120;
+            --card: #172133;
             --accent: #38bdf8;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --border: #334155;
+            --text-p: #f8fafc;
+            --text-s: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text-p); }
 
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-
-        /* Header Section */
-        header { text-align: center; margin-bottom: 60px; }
-        .profile-img {
-            width: 120px; height: 120px; border-radius: 50%;
-            border: 3px solid var(--accent); padding: 5px; margin-bottom: 20px;
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; background: rgba(11, 17, 32, 0.8);
+            backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid var(--border);
         }
-        h1 { font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 10px; }
-        .location { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin-bottom: 20px; }
-        
-        .contact-bar {
-            display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        .contact-item { text-decoration: none; color: var(--text-secondary); font-size: 0.9rem; transition: 0.3s; }
-        .contact-item:hover { color: var(--accent); }
+        .nav-content { max-width: 1100px; margin: 0 auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--text-s); font-size: 0.9rem; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
 
-        /* Sections */
-        section { margin-bottom: 50px; }
-        h2 { 
-            font-size: 1.5rem; margin-bottom: 25px; display: flex; align-items: center; 
-            gap: 10px; border-bottom: 1px solid var(--border); padding-bottom: 10px;
-        }
-        h2 i { color: var(--accent); font-size: 1.2rem; }
+        /* Hero Section */
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+        .hero h1 { font-size: 4rem; letter-spacing: -2px; margin-bottom: 10px; background: linear-gradient(to right, #fff, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: var(--text-s); font-size: 1.2rem; max-width: 600px; }
 
-        /* Experience & Projects */
-        .card {
-            background: var(--card-bg); border: 1px solid var(--border);
-            padding: 25px; border-radius: 16px; margin-bottom: 20px; transition: 0.3s;
-        }
-        .card:hover { border-color: var(--accent); transform: translateY(-2px); }
-        .card-header { display: flex; justify-content: space-between; margin-bottom: 10px; flex-wrap: wrap; }
-        .card-title { font-weight: 700; color: var(--accent); }
-        .card-date { font-size: 0.85rem; color: var(--text-secondary); }
-        ul { list-style: none; }
-        li { position: relative; padding-left: 20px; margin-bottom: 8px; color: var(--text-secondary); font-size: 0.95rem; }
-        li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+        /* Container & Section Styling */
+        .container { max-width: 1000px; margin: 0 auto; padding: 80px 20px; }
+        section { margin-bottom: 100px; }
+        h2 { font-size: 2rem; margin-bottom: 40px; display: flex; align-items: center; gap: 15px; }
+        h2::after { content: ""; height: 1px; background: var(--border); flex-grow: 1; }
 
-        /* Skills Grid */
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag { 
-            background: rgba(56, 189, 248, 0.1); color: var(--accent); 
-            padding: 6px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
+        /* About & Skills */
+        .glass-card { background: var(--card); border: 1px solid var(--border); padding: 40px; border-radius: 24px; position: relative; overflow: hidden; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+        .skill-tag { background: rgba(56, 189, 248, 0.1); color: var(--accent); padding: 8px 16px; border-radius: 12px; font-size: 0.85rem; font-weight: 600; }
 
-        /* Education & Certs */
-        .edu-flex { display: flex; justify-content: space-between; align-items: center; }
+        /* Experience & Projects Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .project-card { background: var(--card); border: 1px solid var(--border); padding: 30px; border-radius: 20px; transition: 0.3s; }
+        .project-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .project-card h3 { color: var(--accent); margin-bottom: 15px; }
+        .project-card p { font-size: 0.9rem; color: var(--text-s); margin-bottom: 15px; }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 1.8rem; }
-            .card-header { flex-direction: column; }
-        }
+        /* Experience List */
+        .exp-item { border-left: 2px solid var(--accent); padding-left: 25px; position: relative; margin-bottom: 40px; }
+        .exp-item::before { content: ""; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+        .exp-date { font-size: 0.8rem; color: var(--accent); font-weight: 700; text-transform: uppercase; }
+
+        /* Contact */
+        .contact-box { text-align: center; }
+        .btn { display: inline-block; background: var(--accent); color: var(--bg); padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; margin-top: 20px; transition: 0.3s; }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .nav-links { display: none; } }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <img src="/PortfolioSite/Profile-pic.jpg" alt="Ramasubramaniyan N" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Ramasubramaniyan+N&background=0ea5e9&color=fff'">
+    <nav>
+        <div class="nav-content">
+            <div style="font-weight: 800; color: var(--accent);">RN.</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <p>Hello! 🫡 I'm</p>
         <h1>RAMASUBRAMANIYAN N</h1>
-        <p class="location"><i class="fa-solid fa-location-dot"></i> Alwarkurichi, Tenkasi, Tamil Nadu</p>
-        
-        <div class="contact-bar">
-            <a href="tel:+918870977232" class="contact-item"><i class="fa-solid fa-phone"></i> +91 8870977232</a>
-            <a href="mailto:ramasubramaniyan6n@gmail.com" class="contact-item"><i class="fa-solid fa-envelope"></i> Email</a>
-            <a href="https://www.linkedin.com/in/ramasubramaniyan-n-8652581a9" class="contact-item" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/Ramasubramaniyan12" class="contact-item" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        </div>
+        <p>Software Engineer specialized in Java Backend & Enterprise Systems</p>
+        <a href="#about" class="btn">Explore My Work</a>
+    </div>
 
-        <p class="tagline" style="max-width: 700px; margin: 0 auto; color: var(--text-secondary);">
-            Software Engineer with 1.8+ years of experience at <b>TCS</b> specializing in backend development. 
-            Expert in Java, Spring Boot, and SQL optimization.
-        </p>
-    </header>
-
-    <section id="skills">
-        <h2><i class="fa-solid fa-gears"></i> Technical Skills</h2>
-        <div class="skills-grid">
-            <span class="skill-tag">Java (Advanced)</span>
-            <span class="skill-tag">Spring Boot</span>
-            <span class="skill-tag">Hibernate/JPA</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">Angular</span>
-            <span class="skill-tag">SQL (MySQL/PostgreSQL)</span>
-            <span class="skill-tag">AWS (EC2/S3)</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Jenkins</span>
-            <span class="skill-tag">Agile</span>
-        </div>
-    </section>
-
-    <section id="experience">
-        <h2><i class="fa-solid fa-briefcase"></i> Experience</h2>
-        <div class="card">
-            <div class="card-header">
-                <span class="card-title">Tata Consultancy Services (TCS) — Software Engineer</span>
-                <span class="card-date">June 2024 – Present</span>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="glass-card">
+                <p style="font-size: 1.1rem; color: var(--text-s);">
+                    I am a backend-focused Software Engineer with <b>1.8+ years of experience at Tata Consultancy Services (TCS)</b>. 
+                    I thrive on building scalable RESTful APIs and optimizing high-performance databases. My journey is driven by a 
+                    commitment to clean code, PII data security, and the excitement of solving complex architectural challenges.
+                </p>
             </div>
-            <ul>
-                <li>Engineered backend services using Java and Spring Boot, reducing maintenance effort by 15%.</li>
-                <li>Optimized complex SQL queries, improving database processing speed by 20%.</li>
-                <li>Implemented tokenization protocols to secure sensitive PII data.</li>
-                <li>Supported CI/CD pipelines using Jenkins and UDeploy, reducing manual effort by 30%.</li>
-            </ul>
-        </div>
-    </section>
+        </section>
 
-    <section id="projects">
-        <h2><i class="fa-solid fa-code"></i> Key Projects</h2>
-        <div class="card">
-            <div class="card-header"><span class="card-title">Secure Data Processing (RDN)</span></div>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 10px;">Java, Spring Boot, Hibernate</p>
-            <ul>
-                <li>Developed secure modules for sensitive customer data and performed API testing via Postman.</li>
-            </ul>
-        </div>
-        <div class="card">
-            <div class="card-header"><span class="card-title">Restaurant Ordering System</span></div>
-            <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 10px;">Full Stack: Angular & Spring Boot</p>
-            <ul>
-                <li>Built a menu and order management system with integrated REST APIs.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-        <div class="card edu-flex">
-            <div>
-                <p><b>B.E. in Computer Science</b></p>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">SNS College of Engineering</p>
+        <section id="skills">
+            <h2>My Expertise</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Java (Advanced)</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">SQL (MySQL/Postgres)</span>
+                <span class="skill-tag">Microservices</span>
+                <span class="skill-tag">Angular</span>
+                <span class="skill-tag">AWS (EC2/S3)</span>
+                <span class="skill-tag">Jenkins</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Informatica ETL</span>
+                <span class="skill-tag">Hibernate/JPA</span>
             </div>
-            <div class="card-title">CGPA: 9.05</div>
-        </div>
-    </section>
+        </section>
 
-</div>
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="exp-item">
+                <div class="exp-date">June 2024 — Present</div>
+                <h3 style="margin: 5px 0;">Software Engineer</h3>
+                <p style="color: var(--accent); font-weight: 600;">Tata Consultancy Services (TCS)</p>
+                <ul style="margin-top: 15px; color: var(--text-s); font-size: 0.95rem; list-style: inside circle;">
+                    <li>Engineered backend services using Spring Boot, reducing maintenance effort by 15%.</li>
+                    <li>Optimized SQL queries, improving processing speed by 20%.</li>
+                    <li>Implemented tokenization for secure PII data compliance.</li>
+                    <li>Managed CI/CD pipelines via Jenkins/UDeploy, cutting manual effort by 30%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Technical Projects</h2>
+            <div class="grid">
+                <div class="project-card">
+                    <h3>Secure Data (RDN)</h3>
+                    <p><b>Stack:</b> Java, Spring Boot, Hibernate</p>
+                    <p>Developed secure backend modules for sensitive data processing. Improved database reliability using Hibernate ORM.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Enterprise Reporting</h3>
+                    <p><b>Stack:</b> SQL, Informatica, Tableau</p>
+                    <p>Automated ETL workflows for massive reporting pipelines and built real-time KPI dashboards.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Restaurant Ordering</h3>
+                    <p><b>Stack:</b> Angular, Spring Boot</p>
+                    <p>Full-stack solution for menu management and order processing using RESTful architecture.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="grid">
+                <div class="glass-card">
+                    <h3>Education</h3>
+                    <p><b>B.E. Computer Science</b></p>
+                    <p>SNS College of Engineering</p>
+                    <p style="color: var(--accent); font-weight: 700;">CGPA: 9.05</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Certifications</h3>
+                    <ul style="color: var(--text-s); font-size: 0.9rem;">
+                        <li>Java Full Stack Developer – Edureka</li>
+                        <li>Advanced SQL Bootcamp – Udemy</li>
+                        <li>OpenAI & ChatGPT API – Udemy</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-box">
+            <h2>Get In Touch</h2>
+            <p>Ready to collaborate </p>
+            <a href="mailto:ramasubramaniyan6n@gmail.com" class="btn">Email Me</a>
+            <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px;">
+                <a href="https://www.linkedin.com/in/ramasubramaniyan-n-8652581a9" target="_blank" class="skill-tag" style="text-decoration:none;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Ramasubramaniyan12" target="_blank" class="skill-tag" style="text-decoration:none;"><i class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+        </section>
+    </div>
 
 </body>
-
 </html>
